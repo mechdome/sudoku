@@ -28,6 +28,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.PointF;
 import android.os.AsyncTask;
@@ -75,6 +77,8 @@ import com.app2go.sudokufree.source.PuzzleIOException;
 import com.app2go.sudokufree.source.PuzzleSource;
 import com.app2go.sudokufree.source.PuzzleSourceIds;
 import com.app2go.sudokufree.source.PuzzleSourceResolver;
+import com.mechdome.external.AppleAppStore;
+import com.mechdome.view.google.AdMobBannerView;
 
 public class SudokuActivity extends BackButtonActivity
 		implements OnTouchListener, OnKeyListener, TickListener {
@@ -323,6 +327,23 @@ public class SudokuActivity extends BackButtonActivity
 			undoButton.setEnabled(history.canUndo());
 			redoButton.setEnabled(history.canRedo());
 		}
+
+		try{
+			ApplicationInfo ai = (ApplicationInfo)getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+			Bundle bundle = ai.metaData;
+			String myApiKey = bundle.getString("md_remove_ads");
+
+			AdMobBannerView banner = (AdMobBannerView)findViewById(R.id.bannerAdSudoku);
+			if(!AppleAppStore.hasProduct(myApiKey)) {
+				banner.setVisibility(View.VISIBLE);
+				banner.init("ca-app-pub-2729669460650010~5828110486", "ca-app-pub-2729669460650010/9108027282", false);
+			}else {
+				banner.setVisibility(View.GONE);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
 	}
 
 	private void createThemeFromPreferences() {

@@ -22,6 +22,8 @@ package com.app2go.sudokufree;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +31,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.app2go.sudokufree.db.SudokuDatabase;
+import com.mechdome.external.AppleAppStore;
+import com.mechdome.view.google.AdMobBannerView;
+import com.mechdome.aboutmechdome.AboutMechDomeActivity;
 
 public class MainActivity extends Activity {
 	private static final String TAG = MainActivity.class.getName();
@@ -99,6 +104,22 @@ public class MainActivity extends Activity {
 				onAboutButton();
 			}
 		});
+		try{
+			ApplicationInfo ai = (ApplicationInfo)getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+			Bundle bundle = ai.metaData;
+			String myApiKey = bundle.getString("md_remove_ads");
+
+			AdMobBannerView banner = (AdMobBannerView) findViewById(R.id.bannerAd);
+			if(!AppleAppStore.hasProduct(myApiKey)) {
+				banner.setVisibility(View.VISIBLE);
+				banner.init("ca-app-pub-2729669460650010~5828110486", "ca-app-pub-2729669460650010/9108027282", false);
+			}else {
+				banner.setVisibility(View.GONE);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
 	}
 
 	@Override
@@ -172,7 +193,7 @@ public class MainActivity extends Activity {
 		if (Constants.LOG_V)
 			Log.v(TAG, "onAboutButton()");
 
-		Intent intent = new Intent(this, AboutActivity.class);
+		Intent intent = new Intent(this, AboutMechDomeActivity.class);
 		startActivity(intent);
 	}
 }

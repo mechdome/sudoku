@@ -1,80 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res/com.app2go.sudokufree"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:background="@drawable/bg">
-    <TextView 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <TextView
-        style="@style/NavigationTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/page_title_welcome"/>
-    <TextView 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <Button
-            style="@style/NavigationButton"
-            android:id="@+id/resumeGameButton"
-            android:layout_width="fill_parent"           
-            android:layout_height="40dip"
-            android:layout_marginRight="10dip"
-            android:text="@string/button_nav_resume_game"/>
-        <Button
-            style="@style/NavigationButton"
-            android:id="@+id/selectNewGameButton"
-            android:layout_width="fill_parent"
-            android:layout_height="40dip"
-            android:layout_marginRight="10dip"
-            android:layout_marginTop="14dip"
-            android:text="@string/button_nav_select_new_game"/>
-        <Button
-            style="@style/NavigationButton"
-            android:id="@+id/selectFoldersButton"
-            android:layout_width="fill_parent"
-            android:layout_height="40dip"
-            android:layout_marginRight="10dip"
-            android:layout_marginTop="14dip"
-            android:text="@string/button_nav_select_folders"/>
-        <Button
-            style="@style/NavigationButton"
-            android:id="@+id/settingsButton"
-            android:layout_width="fill_parent"
-            android:layout_height="40dip"
-            android:layout_marginRight="10dip"
-            android:layout_marginTop="14dip"
-            android:text="@string/button_nav_settings"/>
-        <Button
-            style="@style/NavigationButton"
-            android:id="@+id/helpButton"
-            android:layout_width="fill_parent"
-            android:layout_height="40dip"
-            android:layout_marginRight="10dip"
-            android:layout_marginTop="14dip"
-            android:text="@string/button_nav_help"/>
-        <Button
-            style="@style/NavigationButton"
-            android:id="@+id/aboutButton"
-            android:layout_width="fill_parent"
-            android:layout_height="40dip"
-            android:layout_marginRight="10dip"
-            android:layout_marginTop="14dip"
-            android:text="@string/button_nav_about" android:visibility="visible"/>
-    </LinearLayout>
-    
-    <TextView 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"/>
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg">
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/contentView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="visible" />
+
+        <TextView
+            style="@style/NavigationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/page_title_welcome" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/resumeGameButton"
+                style="@style/NavigationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_marginRight="10dip"
+                android:text="@string/button_nav_resume_game" />
+
+            <Button
+                android:id="@+id/selectNewGameButton"
+                style="@style/NavigationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="14dip"
+                android:text="@string/button_nav_select_new_game" />
+
+            <Button
+                android:id="@+id/selectFoldersButton"
+                style="@style/NavigationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="14dip"
+                android:text="@string/button_nav_select_folders" />
+
+            <Button
+                android:id="@+id/settingsButton"
+                style="@style/NavigationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="14dip"
+                android:text="@string/button_nav_settings" />
+
+            <Button
+                android:id="@+id/helpButton"
+                style="@style/NavigationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="14dip"
+                android:text="@string/button_nav_help" />
+
+            <Button
+                android:id="@+id/aboutButton"
+                style="@style/NavigationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="14dip"
+                android:text="@string/button_nav_about"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <com.mechdome.view.google.AdMobBannerView
+        android:id="@+id/bannerAd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"/>
+</android.support.constraint.ConstraintLayout>
+
