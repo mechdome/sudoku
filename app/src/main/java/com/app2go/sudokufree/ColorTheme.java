@@ -32,6 +32,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.GradientDrawable.Orientation;
 
 import com.app2go.sudokufree.model.PuzzleType;
+import com.github.mariokmk.sudokupro.R;
 
 class ColorTheme implements Theme {
 	private final float borderStrokeWidth;

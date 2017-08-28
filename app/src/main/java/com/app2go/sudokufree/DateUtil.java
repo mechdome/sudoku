@@ -21,7 +21,7 @@
 package com.app2go.sudokufree;
 
 import android.content.res.Resources;
-import com.app2go.sudokufree.R;
+import com.github.mariokmk.sudokupro.R;
 
 public class DateUtil {
 	private DateUtil() {

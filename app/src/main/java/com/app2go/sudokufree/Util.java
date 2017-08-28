@@ -33,6 +33,7 @@ import android.view.WindowManager;
 import com.app2go.sudokufree.db.SudokuDatabase;
 import com.app2go.sudokufree.model.PuzzleType;
 import com.app2go.sudokufree.source.PuzzleSourceIds;
+import com.github.mariokmk.sudokupro.R;
 
 class Util {
 	private Util() {

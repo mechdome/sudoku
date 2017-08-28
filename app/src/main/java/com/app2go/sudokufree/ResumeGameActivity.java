@@ -38,6 +38,7 @@ import com.app2go.sudokufree.db.PuzzleId;
 import com.app2go.sudokufree.db.SudokuDatabase;
 import com.app2go.sudokufree.model.PuzzleType;
 import com.app2go.sudokufree.source.PuzzleSourceIds;
+import com.github.mariokmk.sudokupro.R;
 
 public class ResumeGameActivity extends ListActivity {
 	private static final String TAG = ResumeGameActivity.class.getName();

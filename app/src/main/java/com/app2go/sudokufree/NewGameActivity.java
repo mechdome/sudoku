@@ -38,6 +38,7 @@ import android.widget.TextView;
 import com.app2go.sudokufree.db.GameStatistics;
 import com.app2go.sudokufree.db.SudokuDatabase;
 import com.app2go.sudokufree.source.PuzzleSourceIds;
+import com.github.mariokmk.sudokupro.R;
 
 public class NewGameActivity extends BackButtonActivity {
 	private static final String TAG = NewGameActivity.class.getName();

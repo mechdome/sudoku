@@ -143,4 +143,7 @@
     <string name="permgroup_description_sudoku">Group of permissions to interact with Sudoku.</string>
     <string name="perm_label_import">import sudoku puzzles into Sudoku</string>
     <string name="perm_description_import">Allows the application to create folders and import sudoku puzzles into Sudoku.</string>
+
+    <!-- This is an ad unit ID for a test ad. Replace with your own banner ad unit id. -->
+    <string name="banner_ad_unit_id">ca-app-pub-2729669460650010/9108027282</string>
  </resources>

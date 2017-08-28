@@ -43,6 +43,7 @@ import android.widget.Toast;
 
 import com.app2go.sudokufree.db.SudokuDatabase;
 import com.app2go.sudokufree.source.PuzzleSourceIds;
+import com.github.mariokmk.sudokupro.R;
 
 public class FolderListActivity extends ListActivity {
 	private static final String TAG = FolderListActivity.class.getName();

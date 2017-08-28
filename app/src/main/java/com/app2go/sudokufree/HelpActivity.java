@@ -31,6 +31,8 @@ import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.widget.TextView;
 
+import com.github.mariokmk.sudokupro.R;
+
 import java.io.IOException;
 import java.io.InputStream;
 

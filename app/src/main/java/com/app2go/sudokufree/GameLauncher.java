@@ -26,7 +26,7 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.util.Log;
 
-import com.app2go.sudokufree.R;
+import com.github.mariokmk.sudokupro.R;
 import com.app2go.sudokufree.db.SudokuDatabase;
 import com.app2go.sudokufree.source.PuzzleIOException;
 import com.app2go.sudokufree.source.PuzzleSource;

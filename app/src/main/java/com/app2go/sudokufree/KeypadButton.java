@@ -24,7 +24,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.Button;
-import com.app2go.sudokufree.R;
+import com.github.mariokmk.sudokupro.R;
 
 public class KeypadButton extends Button {
 	private static final int[] HIGHLIGHTED_STATE_SET = { R.attr.state_highlighted };

@@ -23,7 +23,7 @@ package com.app2go.sudokufree;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import com.app2go.sudokufree.R;
+import com.github.mariokmk.sudokupro.R;
 
 public class KeypadToggleButton extends KeypadButton {
 	private static final int[] CHECKED_STATE_SET = { R.attr.state_checked };

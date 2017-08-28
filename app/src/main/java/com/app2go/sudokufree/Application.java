@@ -25,7 +25,7 @@ import android.content.SharedPreferences.Editor;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import com.app2go.sudokufree.R;
+import com.github.mariokmk.sudokupro.R;
 
 public class Application extends android.app.Application {
 	private static final String TAG = Application.class.getName();

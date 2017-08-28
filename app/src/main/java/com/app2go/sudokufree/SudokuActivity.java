@@ -77,6 +77,10 @@ import com.app2go.sudokufree.source.PuzzleIOException;
 import com.app2go.sudokufree.source.PuzzleSource;
 import com.app2go.sudokufree.source.PuzzleSourceIds;
 import com.app2go.sudokufree.source.PuzzleSourceResolver;
+import com.github.mariokmk.sudokupro.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.mechdome.external.AppleAppStore;
 import com.mechdome.view.google.AdMobBannerView;
 
@@ -148,6 +152,7 @@ public class SudokuActivity extends BackButtonActivity
 	private FingertipView fingertipView;
 
 	private Toast toast;
+	private AdView mAdView;
 
 	private final int[] andokuViewScreenLocation = new int[2];
 	private final int[] fingertipViewScreenLocation = new int[2];
@@ -333,12 +338,25 @@ public class SudokuActivity extends BackButtonActivity
 			Bundle bundle = ai.metaData;
 			String myApiKey = bundle.getString("md_remove_ads");
 
-			AdMobBannerView banner = (AdMobBannerView)findViewById(R.id.bannerAdSudoku);
 			if(!AppleAppStore.hasProduct(myApiKey)) {
-				banner.setVisibility(View.VISIBLE);
-				banner.init("ca-app-pub-2729669460650010~5828110486", "ca-app-pub-2729669460650010/9108027282", false);
+				// Initialize the Mobile Ads SDK.
+				MobileAds.initialize(this, "ca-app-pub-2729669460650010~5828110486");
+
+				// Gets the ad view defined in layout/ad_fragment.xml with ad unit ID set in
+				// values/strings.xml.
+				mAdView = (AdView) findViewById(R.id.ad_view);
+
+				// Create an ad request. Check your logcat output for the hashed device ID to
+				// get test ads on a physical device. e.g.
+				// "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
+				AdRequest adRequest = new AdRequest.Builder()
+						.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+						.build();
+
+				// Start loading the ad in the background.
+				mAdView.loadAd(adRequest);
 			}else {
-				banner.setVisibility(View.GONE);
+				mAdView.setVisibility(View.GONE);
 			}
 		}catch(Exception e){
 			e.printStackTrace();
