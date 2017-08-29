@@ -22,7 +22,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.mechdome:MechDome-About:1.4'
+    compile 'com.mechdome:MechDome-About:+'
     compile 'com.google.firebase:firebase-ads:11.2.0'
 }
 apply plugin: 'com.google.gms.google-services'
