@@ -36,7 +36,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.mechdome.external.AppleAppStore;
-import com.mechdome.view.google.AdMobBannerView;
 import com.mechdome.aboutmechdome.AboutMechDomeActivity;
 
 public class MainActivity extends Activity {
